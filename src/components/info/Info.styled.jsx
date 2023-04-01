@@ -10,11 +10,3 @@ justify-content: space-between;
 margin-bottom: 4px;
 
 `
-export const DelBtn = styled.button`
-
-
-`
-export const ContInfo = styled.span`
-
-
-`

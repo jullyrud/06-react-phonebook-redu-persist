@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
-import { ContactList, ContactItem, DelBtn, ContInfo } from './Info.styled'
+import { ContactList, ContactItem } from './Info.styled'
 
-export function Info({ contacts, onDelBtnClick }) {
+export function Info ({ contacts, onDelBtnClick }) {
     
     return (
         <ContactList>
             {contacts.map(({ id, name, number }) => (
                 <ContactItem key={id}>
-                    <ContInfo>{`${name}: ${number}`}</ContInfo>
-                    <DelBtn onClick={()=>{onDelBtnClick(id)}} type="button">Delete</DelBtn>
+                    <span>{`${name}: ${number}`}</span>
+                    <button onClick={()=>{onDelBtnClick(id)}} type="button">Delete</button>
                 </ContactItem>
             ) )}
         </ContactList>
