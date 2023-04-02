@@ -8,6 +8,7 @@ import { addContact, deleteContact } from './reduce/contactsSlice'
 import { setFilter } from './reduce/filtersSlice'
 
 
+
 export function App () {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts)
@@ -27,8 +28,8 @@ export function App () {
       number: data.number,
     }
     dispatch(addContact(contact))
+    console.log(contacts);
   }
-  console.log(contacts);
   
   function deleteContactFunct(id) {
     dispatch(deleteContact(id))
@@ -50,7 +51,7 @@ return (
             <h1>Phonebook</h1>
             <Form inSubmit={onSubmitHandler} />
             <h2>Contacts</h2>
-            <Filter onFilterChange={onFilterChange} />
+      <Filter onFilterChange={onFilterChange} filter={filter} />
             <Info contacts={filteredContacts()}
               onDelBtnClick={deleteContactFunct} />
           </Wrap>
